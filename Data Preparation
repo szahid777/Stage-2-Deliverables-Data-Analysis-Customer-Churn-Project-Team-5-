@@ -1,0 +1,7 @@
+Data_Preparation folder, include:
+
+     - Preprocessed Dataset: Preprocessed dataset file in a structured format.
+
+     - Training and Testing Sets: Files or folders for training and testing sets, including documentation on size and composition.
+
+     - Scaling Techniques Documentation: Document (e.g., PDF or Word) explaining the applied scaling techniques with relevant code snippets.
