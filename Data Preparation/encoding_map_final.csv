@@ -1,0 +1,16 @@
+Column,Original value,Coded as
+gender,Female,0
+gender,Male,1
+Dependents,No,0
+Dependents,Yes,1
+PhoneService,No,0
+PhoneService,Yes,1
+MultipleLines,No,0
+MultipleLines,Yes,1
+InternetService,DSL,0
+InternetService,Fiber optic,1
+Churn,No,0
+Churn,Yes,1
+Contract,Month-to-month,column Contract_Month-to-month = 1 (the other two Contract columns = 0)
+Contract,One year,column Contract_One year = 1 (the other two Contract columns = 0)
+Contract,Two year,column Contract_Two year = 1 (the other two Contract columns = 0)

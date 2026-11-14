@@ -1,0 +1,9 @@
+Column,Set,Stage,Minimum,Maximum,Mean,Standard deviation
+tenure,Training set,Before scaling,0.0,72.0,32.3603,24.5661
+tenure,Training set,After scaling,0.0,1.0,0.4494,0.3412
+tenure,Test set,Before scaling,1.0,72.0,32.4145,24.5416
+tenure,Test set,After scaling,0.0139,1.0,0.4502,0.3409
+MonthlyCharges,Training set,Before scaling,18.0,119.0,64.5351,30.261
+MonthlyCharges,Training set,After scaling,0.0,1.0,0.4607,0.2996
+MonthlyCharges,Test set,Before scaling,19.0,118.0,65.6529,29.3985
+MonthlyCharges,Test set,After scaling,0.0099,0.9901,0.4718,0.2911

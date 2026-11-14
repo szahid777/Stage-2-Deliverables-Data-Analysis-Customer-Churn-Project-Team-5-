@@ -1,0 +1,13 @@
+Check,Result,Detail
+Training + test rows equal the cleaned rows,PASS,5634 + 1409 = 7043; cleaned rows = 7043
+Training and test files have the same columns,PASS,12 columns in both
+No row is in two parts,PASS,0 rows in two parts
+No empty cells in the model files,PASS,0 empty cells
+Every column is a number,PASS,no text columns left
+Churn holds only 0 and 1,PASS,"0 = stayed, 1 = left"
+Churn share is the same in training and test,PASS,26.54% and 26.54%
+The scaler learned from the training rows only,PASS,scaler used 5634 rows; training rows = 5634
+Scaled columns run from 0 to 1 in training,PASS,"tenure 0.00 to 1.00, MonthlyCharges 0.00 to 1.00"
+Churn is not one of the feature columns,PASS,11 feature columns
+The clustering file and the ANN files hold the same customers,PASS,7043 customers in both
+Test rows with the same details as a training row,INFO,125 of 1409 (8.9%)

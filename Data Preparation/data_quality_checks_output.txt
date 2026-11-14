@@ -1,0 +1,47 @@
+Raw data: 7,043 rows and 10 columns
+
+1. Profile of each column
+-------------------------
+         Column   Type  Empty cells  Different values Smallest Largest                Values (text columns)
+         gender   text            0                 2                                         Female / Male
+  SeniorCitizen number            0                 2        0       1                                     
+     Dependents   text            0                 2                                              No / Yes
+         tenure number            0                73        0      72                                     
+   PhoneService   text            0                 2                                              No / Yes
+  MultipleLines   text            0                 2                                              No / Yes
+InternetService   text            0                 2                                     DSL / Fiber optic
+       Contract   text            0                 3                  Month-to-month / One year / Two year
+ MonthlyCharges number            0               101       18     119                                     
+          Churn   text            0                 2                                              No / Yes
+
+2. Counts
+---------
+  Empty cells                                                   0   no empty cells
+  Text values with spaces at the start or end                   0   
+  tenure values that are not whole numbers                      0   
+  MonthlyCharges values that are not whole numbers              0   
+  Outliers in tenure (IQR rule)                                 0   values run from 0 to 72
+  Outliers in MonthlyCharges (IQR rule)                         0   values run from 18 to 119
+  Repeated rows in the raw file (all 10 columns the same)     302   each extra copy counts once
+  Repeated rows after the phone-line fix                      303   the fix makes one more row a copy of an earlier row
+  Customers without phone service                             682   
+     of them with MultipleLines = Yes (cannot be true)        260   changed to No in data_preparation.py
+  Customers with tenure 0                                      11   probably new customers
+     of them who left                                           0   
+  Customers who left (Churn = Yes)                          1,869   26.54% of 7,043
+  A model that always says No is right 73.46% of the time. Accuracy alone is not enough.
+
+3. Effect of each cleaning choice on a simple model
+---------------------------------------------------
+Logistic regression, AUC from cross-validation. AUC runs from 0.5 (no skill) to 1 (perfect). Higher is better.
+
+                          Version of the data  Rows   AUC  Spread between runs
+Chosen: 260 changed to No, repeated rows kept  7043 0.818                0.008
+              No fix at all (original values)  7043 0.818                0.008
+                  260 phone-line rows removed  6783 0.819                0.009
+                        Repeated rows removed  6740 0.814                0.008
+
+The four AUC values lie within 0.005 of each other. The spread between runs is about 0.008.
+A difference smaller than the spread between runs is too small to count. So no choice changes the model in a way we can measure.
+
+Done. This script saved nothing.
